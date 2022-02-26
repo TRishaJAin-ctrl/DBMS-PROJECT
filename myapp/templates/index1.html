@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Vehicle Renting Website</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+  
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+	<style>
+
+			.header{
+				padding: 5px 120px;
+				width: 750px;
+				height: 100px;
+				background-color: #236B8E;
+                border-radius: 20px;
+			}
+		
+			.border{
+                padding: 80px 50px;
+				width: 100%;
+				height: 100%;
+				border: 1px solid #236B8E;
+				border-radius: 0px;
+				background-color: #9AC0CD;
+			}
+
+			.btn {
+				padding: 10px 40px;
+				background-color: #05b560;
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+				border-radius: 10px;
+			}
+
+			.textbox{
+				padding: 10px 50px;
+				background-color: #dae7ed;
+				text-color: #FFFFFF;
+				border-radius: 10px;
+			}
+				
+			::placeholder {
+				color: #000000;
+				opacity: 1;
+				font-style: oblique;
+				
+			}
+
+			.word{
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+			}
+
+			.bottom{
+				color: #236B8E;
+				font-style: oblique;
+				font-weight: bold;
+			}
+	</style>
+</head>
+<body class="border">
+	
+	<div align = "center">
+	<div align = "center">
+	<div class="header">
+	<h1 class = "word">Rent any Vehicle!</h1>
+	</div>
+	<br/>
+	<br/>
+	<form action="/show_vehicle" method="POST">
+		<label for="start_date">Enter start date and time:</label>
+  		<input type="datetime-local" id="start_date" name="start_date" required="required">
+  		<br/>
+  		<br/>
+  		<label for="end_date">Enter end date and time:</label>
+  		<input type="datetime-local" id="end_date" name="end_date" required="required">
+  		<br/>
+  		<br/>
+  		<label for="rental_price">Enter price limit:</label>
+  		<input type="text" id="rental_price" name="rental_price" required="required">
+  		<br/>
+  		<br/>
+  		<label for="vehicle_type">Enter type of vehicle:</label>
+  		<select name="vehicle_type" id="vehicle_type" required="required">
+  			<option value="Car">Car</option>
+  			<option value="Bike">Bike</option>
+  			<option value="Bicycle">Bicycle</option>
+		</select>
+		<br/>
+  		<br/>
+  		<br/>
+		<button type="submit" class="btn">
+              See available vehicles
+        </button>
+	</form>
+	</div>
+	</div>
+</body>
+</html>

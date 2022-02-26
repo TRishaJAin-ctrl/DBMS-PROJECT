@@ -1,0 +1,90 @@
+<!-- Store this code in 'profile_owner.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Add vehicle </title>
+		<!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">			 -->
+		<style>
+
+			.header{
+				padding: 5px 120px;
+				width: 150px;
+				height: 100px;
+				background-color: #236B8E;
+                border-radius: 20px;
+			}
+		
+			.border{
+                padding: 80px 50px;
+				width: 100%;
+				height: 100%;
+				border: 1px solid #9AC0CD;
+				border-radius: 0px;
+				background-color: #9AC0CD;
+			}
+
+			.btn {
+				padding: 10px 40px;
+				background-color: #05b560;
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+				border-radius: 10px;
+			}
+
+			.textbox{
+				padding: 10px 50px;
+				background-color: #dae7ed;
+				text-color: #FFFFFF;
+				border-radius: 10px;
+			}
+				
+			::placeholder {
+				color: #000000;
+				opacity: 1;
+				font-style: oblique;
+				
+			}
+
+			.word{
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+			}
+
+			.bottom{
+				color: #236B8E;
+				font-style: oblique;
+				font-weight: bold;
+			}
+	</style>
+	</head>
+	<body class="border"></br></br></br></br></br>
+		<div align="center">
+		
+			<div class="header">
+				<h1 class="word">Add Vehicle</h1>
+			</div>
+			<h2 class="word">
+				<form action="{{ url_for('owner_add_vehicle') }}" method="post">
+				<div class="msg">{{ msg }}</div>
+					<input id="o_id" name="o_id" type="text" placeholder="Enter O_ID" class="textbox"/></br></br>
+					<input id="o_phno" name="o_phno" type="text" placeholder="Enter Phone Number" class="textbox"/></br></br>
+					<input id="v_number" name="v_number" type="text" placeholder="Enter Vehicle Number" class="textbox"/></br></br>
+					<input id="vehicle_type" name="vehicle_type" type="text" placeholder="Enter Vehicle Type" class="textbox"/></br></br>
+					<input id="model_type" name="model_type" type="text" placeholder="Enter Model Type" class = "textbox"/></br></br>
+					<input id="company_name" name="company_name" type="text" placeholder="Enter Company Name" class="textbox" rows=4/></br></br>
+					<input id="mileage" name="mileage" type="text" placeholder="Enter Mileage" class="textbox"/></br></br>
+					<input id="color" name="color" type="text" placeholder="Enter Color" class="textbox"/></br></br>
+					<input id="available_from" name="available_from" type="datetime-local" placeholder="Enter Available From" class="textbox"/></br></br>
+					<input id="available_till" name="available_till" type="datetime-local" placeholder="Enter Available Till" class="textbox"/></br></br>
+					<input id="seats" name="seats" type="number" placeholder="Enter No of Seats" class="textbox"/></br></br>
+					<input type="submit" class="btn" value="Submit Details"></br>
+				</form>
+			</h2>
+			<a class="btn" href="/index_owner"> Home</a>
+		
+		</div>
+	</body>
+</html>

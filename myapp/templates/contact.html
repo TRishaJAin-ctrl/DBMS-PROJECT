@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+  
+	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+	<title>Office Details</title>
+	<style>
+
+			.header{
+				padding: 5px 120px;
+				width: 150px;
+				height: 70px;
+				background-color: #236B8E;
+                border-radius: 20px;
+			}
+		
+			.border{
+                padding: 80px 50px;
+				width: 100%;
+				height: 100%;
+				border: 1px solid #236B8E;
+				border-radius: 0px;
+				background-color: #9AC0CD;
+			}
+
+			.btn {
+				padding: 10px 40px;
+				background-color: #05b560;
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+				border-radius: 10px;
+			}
+
+			.textbox{
+				padding: 10px 50px;
+				background-color: #dae7ed;
+				text-color: #FFFFFF;
+				border-radius: 10px;
+			}
+				
+			::placeholder {
+				color: #000000;
+				opacity: 1;
+				font-style: oblique;
+				
+			}
+
+			.word{
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+			}
+
+			.bottom{
+				color: #236B8E;
+				font-style: oblique;
+				font-weight: bold;
+			}
+	</style>
+</head>
+<body class="border">
+	<center>
+	
+	<h1>Choose Branch Name</h1>
+  <h3 class="word">
+				<form action="{{ url_for('contact') }}" method="post">
+					<label for="vehicle_type">Enter type of vehicle:</label>
+  					<select name="office_name" id="office_name" required="required">
+  						<option value="RentIT-Hebbal">Hebbal Branch</option>
+  						<option value="RentIT-HSR">HSR Branch</option>
+  						<option value="RentIT-Jayanagar">Jayanagar Branch</option>
+  						<option value="RentIT-Bannerghatta">Bannerghatta Branch</option>
+  						<option value="RentIT-JPNagar">JP Nagar Branch</option>
+  						<option value="RentIT-Banashankari">Banashankari Branch</option>
+  						<option value="RentIT-Bellandur">Bellandur Branch</option>
+  						<option value="RentIT-Koramangala">Koramangala Branch</option>
+					</select>
+					<br/>
+					<br/>
+					<input type="submit" class="btn" value="Search"></br>
+				</form>
+			</h3>
+	<br/>
+	<br/>
+		<h1>Office Details</h1>
+	</br>
+		<div class="col-md-8">
+      <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+          <tr>
+          	<td>Branch ID</td>
+            <td>Branch Name</td>
+            <td>Office Address</td>
+            <td>Phone Number</td>
+           <!-- <td>Driver Required</td> 
+            <td>Book</td> -->
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in office_list %}
+          <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <!-- <td> <input type="checkbox" id="driver" name="driver" value="yes">
+  <label for="driver">YES</label><br>
+	</td> 
+            <td width="130">
+              <a href="/book/{{row[0]}}" class="btn btn-secondary btn-sm">Book</a>
+            </td> -->
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+ <!-- <h1>See availability of vehicles</h1>
+  <h2 class="word">
+				<form action="{{ url_for('show_available') }}" method="post">
+					<input id="start_date" name="start_date" type="datetime-local" placeholder="Start date" class="textbox"/></br></br>
+					<input id="end_date" name="end_date" type="datetime-local" placeholder="End date" class="textbox"/></br></br>
+					<input type="submit" class="btn" value="Submit Date Details"></br>
+				</form>
+			</h2> -->
+	</center>
+</body>
+</html>

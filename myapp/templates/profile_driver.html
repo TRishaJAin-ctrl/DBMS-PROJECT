@@ -1,0 +1,85 @@
+<!-- Store this code in 'profile_driver.html' file inside the 'templates' folder -->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Register </title>
+		<!--<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">			 -->
+		<style>
+
+			.header{
+				padding: 5px 120px;
+				width: 150px;
+				height: 100px;
+				background-color: #236B8E;
+                border-radius: 20px;
+			}
+		
+			.border{
+                padding: 80px 50px;
+				width: 100%;
+				height: 100%;
+				border: 1px solid #236B8E;
+				border-radius: 0px;
+				background-color: #9AC0CD;
+			}
+
+			.btn {
+				padding: 10px 40px;
+				background-color: #05b560;
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+				border-radius: 10px;
+			}
+
+			.textbox{
+				padding: 10px 50px;
+				background-color: #dae7ed;
+				text-color: #FFFFFF;
+				border-radius: 10px;
+			}
+				
+			::placeholder {
+				color: #000000;
+				opacity: 1;
+				font-style: oblique;
+				
+			}
+
+			.word{
+				color: #FFFFFF;
+				font-style: oblique;
+				font-weight: bold;
+			}
+
+			.bottom{
+				color: #236B8E;
+				font-style: oblique;
+				font-weight: bold;
+			}
+	</style>
+	</head>
+	<body></br></br></br></br></br>
+		<div align="center">
+		<div align="center" class="border">
+			<div class="header">
+				<h1 class="word">Update Profile</h1>
+			</div>
+			<h2 class="word">
+				<form action="{{ url_for('profile_driver') }}" method="post">
+				<div class="msg">{{ msg }}</div>
+					<input id="d_fname" name="d_fname" type="text" placeholder="Enter Your First Name" class="textbox"/></br></br>
+					<input id="d_lname" name="d_lname" type="text" placeholder="Enter Your Last Name" class="textbox"/></br></br>
+					<input id="d_dob" name="d_dob" type="date" placeholder="Enter Your DOB""/></br></br>
+					<input id="d_addr" name="d_addr" type="text" placeholder="Enter Your Address" class="textarea" rows=4/></br></br>
+					<input id="d_phno" name="d_phno" type="text" placeholder="Enter Your Phone Number" class="textbox"/></br></br>
+					<input id="d_license" name="d_license" type="text" placeholder="Enter Your License Number" class="textbox"/></br></br>
+					<input type="submit" class="btn" value="Submit Details"></br>
+				</form>
+			</h2>
+			<a class="btn" href="/index_driver"> Home</a>
+		</div>
+		</div>
+	</body>
+</html>

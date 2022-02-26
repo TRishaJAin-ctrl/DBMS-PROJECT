@@ -1,0 +1,38 @@
+<!-- Store this code in 'index.html' file inside the 'templates' folder-->
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title> Index </title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">					
+	</head>
+	<body></br></br></br></br></br>
+		<div align="center">
+		<div align="center" class="border">
+			<div class="header">
+				<h1 class="word">Index</h1>
+			</div></br></br></br>
+				<h1 class="bottom">
+					Hi {{session.username}}!!</br></br> Welcome to the vehicle renting website...				
+				</h1></br></br></br>
+				<center>
+				<h1>Rent any Vehicle!</h1>
+				<br/>
+				<br/>
+				<form action="/show_vehicle" method="POST">
+					<label for="start_date">Enter start date and time:</label>
+  					<input type="datetime-local" id="start_date" name="start_date">
+  					<br/>
+  		<label for="end_date">Enter end date and time:</label>
+  		<input type="datetime-local" id="end_date" name="end_date">
+  		<br/>
+		<button type="submit" class="btn btn-primary btn-block">
+              See available vehicles
+        </button>
+	</form>
+	</center>
+				<a href="{{ url_for('logout') }}" class="btn">Logout</a>
+		</div>
+		</div>
+	</body>
+</html>
